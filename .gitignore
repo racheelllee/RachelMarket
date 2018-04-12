@@ -24,6 +24,8 @@
 /var/bootstrap.php.cache
 /bin/*
 !bin/console
+/vendor
+/composer.lock
 !bin/symfony_requirements
 
 # Assets and user uploads
