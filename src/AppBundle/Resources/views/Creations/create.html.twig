@@ -1,0 +1,8 @@
+{% extends "layout.html.twig" %}
+	{% block title %} Create New Creation {% endblock %}
+	{% block body %}
+		{{ form_start(form, {'action':path('creations.store'), 'method':'POST'}) }}
+		    {{ form_errors(form) }}
+		    <input type="submit" value="Guardar">
+		{{ form_end(form) }}
+	{% endblock %}

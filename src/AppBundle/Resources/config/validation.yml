@@ -1,0 +1,10 @@
+AppBundle\Entity\Creations:
+    properties:
+        name:
+            - NotBlank: {message: "The name is mandatory"}
+        description:
+            - NotBlank: {message: "The description is mandatory"}
+        link:       
+            - NotBlank: {message: "The link is mandatory"}
+        image:
+            - NotBlank: {message: "The image is mandatory"}
