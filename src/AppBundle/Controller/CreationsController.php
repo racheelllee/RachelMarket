@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use AppBundle\Entity\Creations;
 use AppBundle\Form\CreationsType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class CreationsController extends Controller
 {
@@ -118,7 +119,7 @@ class CreationsController extends Controller
         $creation = $em->getRepository(Creations::class)->find($id);
         $em->remove($creation);
         $flush = $em->flush();
-        
-        return $this->redirect('/dashboard/creations');
+        return new JsonResponse("{ok:true}", 200);
+        //return $this->redirect('/dashboard/creations');
     }
 }
