@@ -1,11 +1,12 @@
 {% extends "layout.html.twig" %}
 	{% block title %} View of Creation {{id}}{% endblock %}
-	{% block body %}
+	{% block container %}
 		{{ form_start(form, {'action':'', 'method':'GET'}) }}
 		    {{ form_errors(form) }}
 		    {{ form_row(form.name, { 'attr':{'disabled':'disabled'} } ) }}
 		    {{ form_row(form.description, { 'attr':{'disabled':'disabled'} } ) }}
 		    {{ form_row(form.link, { 'attr':{'disabled':'disabled'} } ) }}
 		    {{ form_row(form.image, { 'attr':{'disabled':'disabled'} } ) }}
+		    {{ form_widget(form) }}
 		{{ form_end(form) }}
 	{% endblock %}

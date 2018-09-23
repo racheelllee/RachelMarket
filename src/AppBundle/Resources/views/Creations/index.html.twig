@@ -1,6 +1,8 @@
 
 {% extends "layout.html.twig" %}
 	{% block javascripts %}
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('.deleteCreation').click(function(){
@@ -35,17 +37,28 @@
 				<th></th>
 			</tr>
 			{% for creation in creations %}
-			<tr>
-				<td>{{creation.name}}</td>
-				<td>{{creation.description}}</td>
-				<td>{{creation.link}}</td>
-				<td>{{creation.image}}</td>
-				<td>{{creation.regDate|date("m/d/Y")}}</td>
-				<td>
-					<a href="{{ path('creations.edit', { 'id' : creation.id }) }}"><i class="fas fa-edit"></i></a>
-					<a href="#" class="deleteCreation" data-id="{{creation.id}}"><i class="fas fa-trash"></i></a>
-				</td>
-			</tr>
+				<tr>
+					<td>
+						{{creation.name}}
+					</td>
+					<td>
+						{{creation.description}}
+					</td>
+					<td>
+						{{creation.link}}
+					</td>
+					<td>
+						{{creation.image}}
+					</td>
+					<td>
+						{{creation.regDate|date("m/d/Y")}}
+					</td>
+					<td>
+						<a href="{{ path('creations.show', { 'id' : creation.id }) }}"><i class="fas fa-eye"></i></a>
+						<a href="{{ path('creations.edit', { 'id' : creation.id }) }}"><i class="fas fa-edit"></i></a>
+						<a href="#" class="deleteCreation" data-id="{{creation.id}}"><i class="fas fa-trash"></i></a>
+					</td>
+				</tr>
 			{% endfor %}	
 		</table>
 	{% endblock %}

@@ -1,8 +1,11 @@
 {% extends "layout.html.twig" %}
 	{% block title %} Create New Creation {% endblock %}
-	{% block body %}
+	{% block container %}
 		{{ form_start(form, {'action':path('creations.update', { 'id' : id }), 'method':'PUT'}) }}
 		    {{ form_errors(form) }}
-		    <input type="submit" value="Editar">
+		    {{ form_widget(form) }}
+		    <div class="text-right mt-4">
+		    	<input class="btn btn-success" type="submit" value="Editar">
+		    </div>
 		{{ form_end(form) }}
 	{% endblock %}

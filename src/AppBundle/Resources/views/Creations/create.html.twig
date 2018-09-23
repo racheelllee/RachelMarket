@@ -1,8 +1,11 @@
 {% extends "layout.html.twig" %}
 	{% block title %} Create New Creation {% endblock %}
-	{% block body %}
-		{{ form_start(form, {'action':path('creations.store'), 'method':'POST'}) }}
+	{% block container %}
+		{{ form_start(form, {'attr':{'class':'form-group'}, 'action':path('creations.store'), 'method':'POST'}) }}
 		    {{ form_errors(form) }}
-		    <input type="submit" value="Guardar">
+		    {{ form_widget(form) }}
+		    <div class="text-right mt-4">
+		    	<input class="btn btn-success" type="submit" value="Guardar">
+		    </div>
 		{{ form_end(form) }}
 	{% endblock %}

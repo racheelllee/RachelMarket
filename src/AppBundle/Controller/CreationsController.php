@@ -107,7 +107,7 @@ class CreationsController extends Controller
             $em->persist($creation);
             $flush = $em->flush();
         }
-        return $this->redirect('/dashboard/creations/'.$id);
+        return $this->redirect('/dashboard/creations/'.$id.'/edit');
     }
 
 	 /**
